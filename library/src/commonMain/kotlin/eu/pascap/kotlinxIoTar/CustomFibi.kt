@@ -1,4 +1,4 @@
-package io.github.kotlin.fibonacci
+package eu.pascap.kotlinxIoTar
 
 fun generateFibi() = sequence {
     var a = firstElement

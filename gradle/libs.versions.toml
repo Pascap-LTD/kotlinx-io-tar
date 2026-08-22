@@ -1,12 +1,14 @@
 [versions]
-agp = "9.1.0"
+agp = "9.3.1"
 android-compileSdk = "37"
 android-minSdk = "24"
 kotlin = "2.4.10"
-vanniktech-maven-publish = "0.36.0"
+kotlinxIoCore = "0.9.1"
+vanniktech-maven-publish = "0.37.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlinx-io-core = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "kotlinxIoCore" }
 
 [plugins]
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }

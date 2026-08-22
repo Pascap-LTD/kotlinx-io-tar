@@ -1,4 +1,4 @@
-package io.github.kotlin.fibonacci
+package eu.pascap.kotlinxIoTar
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

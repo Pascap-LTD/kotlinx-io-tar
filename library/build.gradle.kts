@@ -6,13 +6,13 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = "io.github.kotlin"
+group = "eu.pascap.kotlinxIoTar"
 version = "1.0.0"
 
 kotlin {
     jvm()
-    androidLibrary {
-        namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
+    android {
+        namespace = "eu.pascap.kotlinxIoTar"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
 
@@ -23,7 +23,7 @@ kotlin {
         }
 
         compilerOptions {
-            jvmTarget = JvmTarget.JVM_11
+            jvmTarget = JvmTarget.JVM_17
         }
     }
     iosArm64()
@@ -32,7 +32,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            implementation(libs.kotlinx.io.core)
         }
 
         commonTest.dependencies {
@@ -46,31 +46,31 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates(group.toString(), "library", version.toString())
+    coordinates(group.toString(), "kotlinIoTar", version.toString())
 
     pom {
-        name = "My library"
-        description = "A library."
-        inceptionYear = "2024"
-        url = "https://github.com/kotlin/multiplatform-library-template/"
+        name = "kotlinx-io-tar"
+        description = "Library that allows to read/write tar files with kotlinx-io"
+        inceptionYear = "2026"
+        url = "https://github.com/Pascap-LTD/kotlinx-io-tar/"
         licenses {
             license {
-                name = "XXX"
-                url = "YYY"
-                distribution = "ZZZ"
+                name = "The Apache License, Version 2.0"
+                url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "https://www.apache.org/licenses/LICENSE-2.0.txt"
             }
         }
         developers {
             developer {
-                id = "XXX"
-                name = "YYY"
-                url = "ZZZ"
+                id = "pascap-ltd"
+                name = "Pascap LTD"
+                url = "https://pascap.eu"
             }
         }
         scm {
-            url = "XXX"
-            connection = "YYY"
-            developerConnection = "ZZZ"
+            url = "https://github.com/Pascap-LTD/kotlinx-io-tar/"
+            connection = "scm:git:git://github.com/Pascap-LTD/kotlinx-io-tar.git"
+            developerConnection = "scm:git:ssh://git@github.com/Pascap-LTD/kotlinx-io-tar.git"
         }
     }
 }
