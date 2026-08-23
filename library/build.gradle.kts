@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = "eu.pascap.kotlinxIoTar"
+group = "eu.pascap"
 version = "1.0.0"
 
 kotlin {
