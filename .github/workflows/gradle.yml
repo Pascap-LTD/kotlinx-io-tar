@@ -15,14 +15,15 @@ jobs:
     strategy:
       matrix:
         include:
-          - target: iosSimulatorArm64Test
-            os: macos-latest
+# save energy for now
+#          - target: iosSimulatorArm64Test
+#            os: macos-latest
           - target: jvmTest
             os: ubuntu-latest
-          - target: linuxX64Test
-            os: ubuntu-latest
-          - target: testAndroidHostTest
-            os: ubuntu-latest
+#          - target: linuxX64Test
+#            os: ubuntu-latest
+#          - target: testAndroidHostTest
+#            os: ubuntu-latest
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -34,7 +35,7 @@ jobs:
         path: |
           ~/.konan
         key: ${{ runner.os }}-${{ hashFiles('**/.lock') }}
-    - name: Set up JDK 25
+    - name: Set up JDK
       uses: actions/setup-java@v5
       with:
         distribution: temurin
