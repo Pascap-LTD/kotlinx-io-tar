@@ -1,7 +1,8 @@
 name: Publish
 on:
-  release:
-    types: [released, prereleased]
+  push:
+    tags:
+      - '*.*.*'
 jobs:
   publish:
     name: Release build and publish
@@ -9,6 +10,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v7
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       - name: Set up JDK
         uses: actions/setup-java@v5
         with:
