@@ -4,6 +4,10 @@
 
 This repository is a kotlin multiplatform library to read and create a tar. It uses [kotlinx-io](https://github.com/Kotlin/kotlinx-io) for the I/O part
 
+## Why use a tar format?
+
+If you have immutable data that doesn't need to be partially accessed, that's the perfect format! Also a specificity of a tar is that if you add more data to it, you can redownload only the difference as the tar will keep the order.
+
 # Documentation
 
 ## Read a tar
