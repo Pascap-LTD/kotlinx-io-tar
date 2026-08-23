@@ -10,6 +10,14 @@ This repository is a kotlin multiplatform library to read and create a tar. It u
 
 ## Write a tar
 
+
+# Do a release
+
+git tag x.x.x
+git push origin x.x.x
+then go to [maven](https://central.sonatype.com/publishing/deployments) to validate the deployment
+then on GitHub [create a new release](https://github.com/Pascap-LTD/kotlinx-io-tar/releases/new)
+
 # About
 
 We are [pascap LTD](https://pascap.eu) a small startup, if you want to support us don't hesitate to try our app on the [play store](https://play.google.com/store/apps/details?id=com.pascap.connectedBody), we use that library in production with that application.
