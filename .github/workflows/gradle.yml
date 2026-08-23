@@ -39,7 +39,7 @@ jobs:
       with:
         distribution: temurin
         java-version: '25'
-    - name: Build with Gradle
+    - name: setup gradle
       uses: gradle/actions/setup-gradle@v6
-      with:
-        arguments: ${{ matrix.target }}
+    - name: run tests
+      run: ./gradlew ${{ matrix.target }}
