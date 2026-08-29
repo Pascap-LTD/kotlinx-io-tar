@@ -86,12 +86,9 @@ class TarSink(private val sink: Sink) : AutoCloseable {
      * Closes the current tar entry
      */
     private fun closeCurrentEntry() {
-        if (currentEntry != null) {
-            if (currentEntry!!.size > currentFileSize) {
-                throw IOException(
-                    ("The current entry[" + currentEntry!!.name + "] of size["
-                            + currentEntry!!.size + "] has not been fully written.")
-                )
+        currentEntry?.run {
+            if (size > currentFileSize) {
+                throw IOException(("The current entry[$name] of size[$size] has not been fully written."))
             }
 
             currentEntry = null

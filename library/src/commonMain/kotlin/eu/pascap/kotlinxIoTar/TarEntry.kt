@@ -139,7 +139,7 @@ class TarEntry {
     fun extractTarHeader(entryName: String) {
         file?.let { file ->
             val metadata = SystemFileSystem.metadataOrNull(file)
-            val permissions = StandardFilePermission.READ.mode // okio has no permissions api so just assume READ access by default //permissions(metadata)
+            val permissions = StandardFilePermission.READ.mode
             header = createHeader(entryName, metadata?.size ?: 0, 0, metadata?.isDirectory == true, permissions)
         } ?: throw Exception("File is null")
     }
