@@ -43,4 +43,4 @@ jobs:
     - name: setup gradle
       uses: gradle/actions/setup-gradle@v6
     - name: run tests
-      run: ./gradlew ${{ runner.target }}
+      run: ./gradlew ${{ matrix.target }}
